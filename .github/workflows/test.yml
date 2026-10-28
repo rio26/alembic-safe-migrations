@@ -1,0 +1,23 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install pytest
+      - run: python -m pytest tests/ -q
+      - name: checker rejects the risky example and passes the safe ones
+        run: |
+          python skills/alembic-safe-migrations/scripts/check_migration.py examples/risky_migration.py && exit 1 || true
+          python skills/alembic-safe-migrations/scripts/check_migration.py --strict examples/safe_add_index.py examples/safe_not_null_column.py

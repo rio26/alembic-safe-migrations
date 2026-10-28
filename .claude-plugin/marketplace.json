@@ -1,0 +1,20 @@
+{
+  "name": "rio26",
+  "owner": {
+    "name": "rio26",
+    "url": "https://github.com/rio26"
+  },
+  "metadata": {
+    "description": "Skills and plugins by rio26"
+  },
+  "plugins": [
+    {
+      "name": "alembic-safe-migrations",
+      "source": "./",
+      "description": "Write and review Alembic migrations that will not lock up a production PostgreSQL database.",
+      "version": "0.1.0",
+      "category": "database",
+      "keywords": ["alembic", "postgresql", "migrations", "sqlalchemy"]
+    }
+  ]
+}

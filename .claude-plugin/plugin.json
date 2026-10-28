@@ -1,0 +1,13 @@
+{
+  "name": "alembic-safe-migrations",
+  "version": "0.1.0",
+  "description": "Write and review Alembic migrations that will not lock up a production PostgreSQL database, with a static checker for CI.",
+  "author": {
+    "name": "rio26",
+    "url": "https://github.com/rio26"
+  },
+  "homepage": "https://github.com/rio26/alembic-safe-migrations",
+  "repository": "https://github.com/rio26/alembic-safe-migrations",
+  "license": "MIT",
+  "keywords": ["alembic", "postgresql", "migrations", "sqlalchemy", "database", "zero-downtime"]
+}
